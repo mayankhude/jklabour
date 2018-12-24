@@ -1,3 +1,10 @@
+
+
+/*
+ * @author hudelabs
+ * 
+ */
+
 package org.dev.jklabourF;
 
 import org.dev.jklabour.commonLibS.BaseClass1;

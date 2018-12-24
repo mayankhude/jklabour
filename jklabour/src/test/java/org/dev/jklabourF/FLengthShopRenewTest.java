@@ -1,3 +1,9 @@
+
+/*
+ * @author hudelabs
+ * 
+ */
+
 package org.dev.jklabourF;
 
 import java.util.Properties;
