@@ -1,16 +1,9 @@
-
-
-/*
- * @author hudelabs
- * 
- */
-
 package org.dev.jklabourF;
 
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.dev.jklabour.ObjectRepositoryA.EstablishmentsEmployingBuildingWorkersMenu;
+import org.dev.jklabour.ObjectRepositoryA.EstEmpBuildingWorkersMenu;
 import org.dev.jklabour.ObjectRepositoryA.LIRevertBackApplicant;
 import org.dev.jklabour.commonLibS.BaseClass1;
 import org.dev.jklabour.commonLibS.FileSet;
@@ -187,7 +180,7 @@ public class EditBuildingWorkerTest extends BaseClass1 {
 
 	@Test
 	public void test2ALCRevertBack() throws EncryptedDocumentException, Throwable {
-		EstablishmentsEmployingBuildingWorkersMenu menu = PageFactory.initElements(driver, EstablishmentsEmployingBuildingWorkersMenu.class);
+		EstEmpBuildingWorkersMenu menu = PageFactory.initElements(driver, EstEmpBuildingWorkersMenu.class);
 		menu.BuildingWorkers();
 
 		/*

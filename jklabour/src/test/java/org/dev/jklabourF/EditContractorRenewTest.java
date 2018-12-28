@@ -1,10 +1,3 @@
-
-
-/*
- * @author hudelabs
- * 
- */
-
 package org.dev.jklabourF;
 
 import java.io.IOException;
@@ -15,7 +8,6 @@ import org.dev.jklabour.ObjectRepositoryA.LIRevertBackApplicant;
 import org.dev.jklabour.commonLibS.BaseClass1;
 import org.dev.jklabour.commonLibS.FileSet;
 import org.dev.jklabour.commonLibS.FileUtiles;
-
 import org.dev.jklabour.commonLibS.WebDriverUtils1;
 import org.dev.jklabour.objectRepositorys.ContractLabourAct1;
 import org.dev.jklabour.objectRepositorys.ContractorsRenewal;
@@ -38,7 +30,7 @@ public class EditContractorRenewTest extends BaseClass1 {
 
 		ContractorsRenewal cr = PageFactory.initElements(driver, ContractorsRenewal.class);
 		cr.contractorsRenewal();
-		
+		;
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		WebElement oldId = driver.findElement(By.name("registration_approval_file"));
@@ -92,7 +84,7 @@ public class EditContractorRenewTest extends BaseClass1 {
 		WebElement estdist = driver.findElement(By.name("est_address_district_id"));
 		String dist1 = WebDriverUtils1.dropdownselect(estdist, "Jammu");
 		System.out.println("selected dist ==>" + dist1);
-		FileSet.setExcelData("./excel/data.xlsx", "dist", 1, 1, dist1);
+		FileSet.setExcelData("./shop.xlsx","dist" , 1, 1, dist1);
 		Thread.sleep(1000);
 
 		String estpin = fl.convertDoubleToString(fl.getIntExcelData(i, 13));

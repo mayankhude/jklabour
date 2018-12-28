@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="org.dev.jklabourF.FLengthMigrantTest"/>
+      <class name="org.dev.jklabourF.FLengthShopRenewTest"/>
+      <class name="org.dev.jklabourF.FactroryRenewFLengthTest"/>
+      <class name="org.dev.jklabourF.FLengthBoilerRegTest"/>
+      <class name="org.dev.jklabourF.FLengthBoilerRenewTest"/>
+      <class name="org.dev.jklabourF.FLengthFactoryBuildingTest"/>
+      <class name="org.dev.jklabourF.FLengthFormDTest"/>
+      <class name="org.dev.jklabourF.FactoryBuildingFLengthTest"/>
+      <class name="org.dev.jklabourF.FormDFLengthTest"/>
+      <class name="org.dev.jklabourF.FactroryRegFLengthTest"/>
+      <class name="org.dev.jklabourF.FLengthBuildingWorkerTest"/>
+      <class name="org.dev.jklabourF.FLengthContLabourTest"/>
+      <class name="org.dev.jklabourF.FLengthFactroryRenewTest"/>
+      <class name="org.dev.jklabourF.FLengthMigrantWorkerTest"/>
+      <class name="org.dev.jklabourF.FLengthContractorTest"/>
+      <class name="org.dev.jklabourF.FLengthMigrantRenewTest"/>
+      <class name="org.dev.jklabourF.FLengthShopTest"/>
+      <class name="org.dev.jklabourF.FLengthContRenewFLengthTest"/>
+      <class name="org.dev.jklabourF.FLengthFactroryRegTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

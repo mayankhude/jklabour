@@ -1,10 +1,7 @@
 package org.dev.jklabour.commonLibS;
 
-import java.util.Iterator;
 import java.util.Properties;
-import java.util.Set;
-
-import org.dev.jklabour.ObjectRepositoryA.AdminLogin;
+import org.dev.jklabour.ObjectRepositoryA.AdminLoginN;
 import org.dev.jklabour.ObjectRepositoryA.DepartmentLogin;
 import org.dev.jklabour.objectRepositorys.Logins;
 import org.dev.jklabour.objectRepositorys.UsersLogin;
@@ -29,11 +26,11 @@ public class BaseClass1 {
 	    System.out.println("===============browser was launched===============");
 
 	    String p="user";
-		  String d="jammu";
+		
 		  FileSet.setExcelData("./excel/data.xlsx", "person" ,1,1, p);
 	     
-		  FileSet.setExcelData("./excel/data.xlsx", "dist" ,1,1, d);
-   
+		  
+		 
 		 
 	      }    
 	    
@@ -54,7 +51,7 @@ public class BaseClass1 {
 				  Logins lg=PageFactory.initElements(driver, Logins.class);
 			         lg.loginmenu();
 		      
-		  FileUtiles fl=new FileUtiles("./excel/data.xlsx", "person");
+		 FileUtiles fl=new FileUtiles("./excel/data.xlsx", "person");
 			  person=fl.getStringExcelData(1,1);
 	
 			
@@ -75,7 +72,7 @@ public class BaseClass1 {
 		
 		 else if(person.equalsIgnoreCase("ALC"))
 			     { 
-			 FileUtiles fl1=new FileUtiles("./excel/data.xlsx", "dist");
+			 FileUtiles fl1=new FileUtiles("./shop.xlsx","dist");
 			 dist=fl1.getStringExcelData(1,1);	
  
 			 DepartmentLogin  dp=PageFactory.initElements(driver,DepartmentLogin.class);
@@ -85,14 +82,7 @@ public class BaseClass1 {
 		 * 
 		 * ------------------------new  browser handle-----------------------*/	
 				
-				Set<String> set=driver.getWindowHandles();
-				System.out.println(set.size());
-				
-				Iterator<String> iterator=set.iterator();
-				 perentId=iterator.next();
-				String childId=iterator.next();
-				driver.switchTo().window(childId);
-
+			
 			
 				 
 				
@@ -102,7 +92,7 @@ public class BaseClass1 {
 					   FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					  String  adminALC= af.getStringExcelData(1,1);
 					  String adminPWD =af.getStringExcelData(1,2);
-					  AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					  AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					  ac.adminLogin(adminALC, adminPWD );
 				     }	
 				
@@ -111,7 +101,7 @@ public class BaseClass1 {
 					  FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					  String  adminALC= af.getStringExcelData(5,1);
 					  String adminPWD =af.getStringExcelData(5,2);
-					  AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					  AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					  ac.adminLogin(adminALC, adminPWD );
 				     }
 				
@@ -119,7 +109,7 @@ public class BaseClass1 {
 				     {FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					  String  adminALC= af.getStringExcelData(7,1);
 					  String adminPWD =af.getStringExcelData(7,2);
-					  AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					  AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					  ac.adminLogin(adminALC, adminPWD );
 				      }
 				
@@ -128,7 +118,7 @@ public class BaseClass1 {
 					  FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					String  adminALC= af.getStringExcelData(8,1);
 					 String adminPWD =af.getStringExcelData(8,2);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				
@@ -136,7 +126,7 @@ public class BaseClass1 {
 				   {FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					String  adminALC= af.getStringExcelData(9,1);
 					 String adminPWD =af.getStringExcelData(9,2);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				
@@ -145,7 +135,7 @@ public class BaseClass1 {
 				   {FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					String  adminALC= af.getStringExcelData(10,1);
 					 String adminPWD =af.getStringExcelData(10,2);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				
@@ -154,7 +144,7 @@ public class BaseClass1 {
 					  FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					String  adminALC= af.getStringExcelData(11,1);
 					 String adminPWD =af.getStringExcelData(11,2);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				   }
 				
@@ -162,7 +152,7 @@ public class BaseClass1 {
 				   {FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					String  adminALC= af.getStringExcelData(12,1);
 					 String adminPWD =af.getStringExcelData(12,2);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 					
 				     }
@@ -172,7 +162,7 @@ public class BaseClass1 {
 					  FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					String  adminALC= af.getStringExcelData(13,1);
 					 String adminPWD =af.getStringExcelData(13,2);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD ); 
 				   
 				   }
@@ -182,7 +172,7 @@ public class BaseClass1 {
 				   {FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					String  adminALC= af.getStringExcelData(14,1);
 					 String adminPWD =af.getStringExcelData(14,2);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				
@@ -197,19 +187,10 @@ public class BaseClass1 {
 			/*-----
 			 * 
 			 * ------------------------new  browser handle-----------------------*/	
-					
-					Set<String> set=driver.getWindowHandles();
-					System.out.println(set.size());
-					
-					Iterator<String> iterator=set.iterator();
-					String perentId=iterator.next();
-					String childId=iterator.next();
-					driver.switchTo().window(childId);
-
-			
+				
 				
 					 
-					 FileUtiles fl1=new FileUtiles("./excel/data.xlsx", "dist");
+					 FileUtiles fl1=new FileUtiles("./shop.xlsx","dist");
 							 dist=fl1.getStringExcelData(1,1);	
 				 
 				 
@@ -217,7 +198,7 @@ public class BaseClass1 {
 				   { FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					  String  adminALC= af.getStringExcelData(3,3);
 						 String adminPWD =af.getStringExcelData(3,4);
-						 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+						 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 						 ac.adminLogin(adminALC, adminPWD );
 				   }	
 				
@@ -228,7 +209,7 @@ public class BaseClass1 {
 					FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(5,3);
 					 String adminPWD =af.getStringExcelData(5,4);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );  
 				   }
 				
@@ -236,7 +217,7 @@ public class BaseClass1 {
 				   {FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(7,3);
 					 String adminPWD =af.getStringExcelData(7,4);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				
@@ -244,7 +225,7 @@ public class BaseClass1 {
 				   {FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(8,3);
 					 String adminPWD =af.getStringExcelData(8,4);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				
@@ -254,7 +235,7 @@ public class BaseClass1 {
 					FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(11,3);
 					 String adminPWD =af.getStringExcelData(11,4);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );  
 				   }
 				
@@ -263,7 +244,7 @@ public class BaseClass1 {
 					  FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(12,3);
 					 String adminPWD =af.getStringExcelData(12,4);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD ); 
 				   }
 				
@@ -272,14 +253,15 @@ public class BaseClass1 {
 					  FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(13,3);
 					 String adminPWD =af.getStringExcelData(13,4);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
-				
-				
+				  else{
+					  System.out.println(" labour inspector not available this perticular district");
+				  }
 			  }
 			 
-			 else if(person.equalsIgnoreCase("SAF"))
+	 else if(person.equalsIgnoreCase("SAF"))
 			  {   	
 				 DepartmentLogin  dp=PageFactory.initElements(driver,DepartmentLogin.class);
 					dp.deptLoginlink();
@@ -288,15 +270,8 @@ public class BaseClass1 {
 			 * 
 			 * ------------------------new  browser handle-----------------------*/	
 					
-					Set<String> set=driver.getWindowHandles();
-					System.out.println(set.size());
-					
-					Iterator<String> iterator=set.iterator();
-					 perentId=iterator.next();
-					String childId=iterator.next();
-					driver.switchTo().window(childId);
-					 
-					 FileUtiles fl1=new FileUtiles("./excel/data.xlsx", "dist");
+			 
+					 FileUtiles fl1=new FileUtiles("./shop.xlsx","dist");
 							 dist=fl1.getStringExcelData(1,1);	
 				
 				
@@ -305,7 +280,7 @@ public class BaseClass1 {
 				   { FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(17,1);
 					 String adminPWD =af.getStringExcelData(17,2);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				 
@@ -313,7 +288,7 @@ public class BaseClass1 {
 				     { FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(18,1);
 					 String adminPWD =af.getStringExcelData(18,2);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				  
@@ -335,24 +310,17 @@ public class BaseClass1 {
 			 * 
 			 * ------------------------new  browser handle-----------------------*/	
 					
-					Set<String> set=driver.getWindowHandles();
-					System.out.println(set.size());
-					
-					Iterator<String> iterator=set.iterator();
-					 perentId=iterator.next();
-					String childId=iterator.next();
-					driver.switchTo().window(childId);
-
+			
 				
 					 
-					 FileUtiles fl1=new FileUtiles("./excel/data.xlsx", "dist");
+					 FileUtiles fl1=new FileUtiles("./shop.xlsx","dist");
 							 dist=fl1.getStringExcelData(1,1);	
 							 
 				 if (dist.equalsIgnoreCase("Jammu Circle 1"))
 				   { FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(17,3);
 					 String adminPWD =af.getStringExcelData(17,4);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				 
@@ -360,7 +328,7 @@ public class BaseClass1 {
 				     { FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 					 String  adminALC= af.getStringExcelData(18,3);
 					 String adminPWD =af.getStringExcelData(18,4);
-					 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 					 ac.adminLogin(adminALC, adminPWD );
 				     }
 				  
@@ -377,26 +345,28 @@ public class BaseClass1 {
 					 DepartmentLogin  dp=PageFactory.initElements(driver,DepartmentLogin.class);
 						dp.deptLoginlink();
 						
-				/*-----
-				 * 
-				 * ------------------------new  browser handle-----------------------*/	
-						
-						Set<String> set=driver.getWindowHandles();
-						System.out.println(set.size());
-						
-						Iterator<String> iterator=set.iterator();
-						 perentId=iterator.next();
-						String childId=iterator.next();
-						driver.switchTo().window(childId);
-
-					
+			
 				  
 				  FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
 				 String  adminALC= af.getStringExcelData(19,1);
 				 String adminPWD =af.getStringExcelData(19,2);
-				 AdminLogin ac = PageFactory.initElements(driver, AdminLogin.class);
+				 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
 				 ac.adminLogin(adminALC, adminPWD );
 			       }// sc close
+	 
+	 
+			  else if(person.equalsIgnoreCase("CIB"))
+		      { 
+				  DepartmentLogin  dp=PageFactory.initElements(driver,DepartmentLogin.class);
+					dp.deptLoginlink();
+					
+				  FileUtiles af=new FileUtiles("./excel/adminData.xlsx", "admin");	 
+				  String  adminALC= af.getStringExcelData(22,1);
+					 String adminPWD =af.getStringExcelData(22,2);
+					 AdminLoginN ac = PageFactory.initElements(driver, AdminLoginN.class);
+					 ac.adminLogin(adminALC, adminPWD );
+		      }
+	 
 
 	    } // base class close	 
 		

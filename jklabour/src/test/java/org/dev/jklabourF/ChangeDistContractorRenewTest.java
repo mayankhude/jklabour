@@ -1,10 +1,3 @@
-
-/*
- * @author hudelabs
- * 
- */
-
-
 package org.dev.jklabourF;
 
 import java.io.IOException;
@@ -15,7 +8,6 @@ import org.dev.jklabour.ObjectRepositoryA.LIRevertBackApplicant;
 import org.dev.jklabour.commonLibS.BaseClass1;
 import org.dev.jklabour.commonLibS.FileSet;
 import org.dev.jklabour.commonLibS.FileUtiles;
-
 import org.dev.jklabour.commonLibS.WebDriverUtils1;
 import org.dev.jklabour.objectRepositorys.ContractLabourAct1;
 import org.dev.jklabour.objectRepositorys.ContractorsRenewal;
@@ -30,7 +22,7 @@ import org.testng.annotations.Test;
 public class ChangeDistContractorRenewTest extends BaseClass1 {
 	static int i = 2;
 
-	@Test
+	@Test(priority=0)
 	public void test1CreateContractor() throws IOException, Throwable {
 		ContractLabourAct1 cla = PageFactory.initElements(driver, ContractLabourAct1.class);
 		cla.contractLabour();
@@ -92,7 +84,7 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 		WebElement estdist = driver.findElement(By.name("est_address_district_id"));
 		String dist1 = WebDriverUtils1.dropdownselect(estdist, "Jammu");
 		System.out.println("selected dist ==>" + dist1);
-		FileSet.setExcelData("./excel/data.xlsx", "dist", 1, 1, dist1);
+		FileSet.setExcelData("./shop.xlsx","dist", 1, 1, dist1);
 		Thread.sleep(1000);
 
 		String estpin = fl.convertDoubleToString(fl.getIntExcelData(i, 13));
@@ -234,7 +226,7 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 
 	/* ------------------------------------------------------------------ */
 
-	@Test
+	@Test (priority=1)
 	public void test2ALCRevertBack() throws EncryptedDocumentException, Throwable {
 		ALCContractorsRegistrationsMenu al = PageFactory.initElements(driver, ALCContractorsRegistrationsMenu.class);
 		al.ContractorsRegistrations();
@@ -245,13 +237,13 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 		 */
 
 		/*----------------------- click on View -------------------------------*/
-
-		FileUtiles fl = new FileUtiles("./excel/jklabourData.xlsx", "trackinid");
+FileUtiles fl = new FileUtiles("./excel/jklabourData.xlsx", "trackinid");
 		String id = fl.getStringExcelData(5, 3);
 		System.out.println("tracking id ==> " + id);
 
 		driver.findElement(By.xpath("//td[text()='" + id + "']/following-sibling::td/a[text()='View']")).click();
 
+		
 		/*---------------------do action ------------------*/
 
 		LIRevertBackApplicant rb = PageFactory.initElements(driver, LIRevertBackApplicant.class);
@@ -259,7 +251,7 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 
 		driver.findElement(By.xpath(
 				"//input[@value='reverted_back']" + "/following-sibling::textarea[@name='status_update_message']"))
-				.sendKeys("ok");
+				.sendKeys("Edit Field");
 
 		/*
 		 * driver.findElement(By.
@@ -287,7 +279,7 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 
 	/* ------------------------------------------------------------------ */
 
-	@Test
+	@Test(priority=2)
 	public void test3UserEditAndSubmit() throws EncryptedDocumentException, Throwable {
 
 		PostApplication pa = PageFactory.initElements(driver, PostApplication.class);
@@ -302,16 +294,16 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 
 		FileUtiles fl = new FileUtiles("./excel/jklabourData.xlsx", "trackinid");
 		String id = fl.getStringExcelData(5, 3);
-		System.out.println(" TRACKING ID =id");
+		System.out.println(" TRACKING ID = "+id);
 
 		driver.findElement(By.xpath("//td[text()='" + id + "']/following-sibling::td/a[contains(text(),'Edit')]"))
 				.click();
 
 		
 		WebElement estdist = driver.findElement(By.name("est_address_district_id"));
-		String dist1 = WebDriverUtils1.dropdownselect(estdist, "Jammu");
+		String dist1 = WebDriverUtils1.dropdownselect(estdist, "kistwar");
 		System.out.println("selected dist ==>" + dist1);
-		FileSet.setExcelData("./excel/data.xlsx", "dist", 1, 1, dist1);
+		FileSet.setExcelData("./shop.xlsx","dist", 1, 1, dist1);
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//input[@value='Continue']")).submit();
@@ -352,7 +344,7 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 	
 	
 	
-	@Test
+	@Test(priority=3)
 	public void test4ALCRevertBack() throws EncryptedDocumentException, Throwable
 	{
 		ALCContractorsRegistrationsMenu al = PageFactory.initElements(driver, ALCContractorsRegistrationsMenu.class);
@@ -378,7 +370,7 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 
 		driver.findElement(By.xpath(
 				"//input[@value='reverted_back']" + "/following-sibling::textarea[@name='status_update_message']"))
-				.sendKeys("ok");
+				.sendKeys("edit field");
 
 		/*
 		 * driver.findElement(By.
@@ -405,7 +397,7 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 	}
 	
 	
-	@Test
+	@Test(priority=4)
 	public void test5UserEditAndSubmit() throws EncryptedDocumentException, Throwable
 	{
 
@@ -421,7 +413,7 @@ public class ChangeDistContractorRenewTest extends BaseClass1 {
 
 		FileUtiles fl = new FileUtiles("./excel/jklabourData.xlsx", "trackinid");
 		String id = fl.getStringExcelData(5, 3);
-		System.out.println(" TRACKING ID =id");
+		System.out.println(" TRACKING ID = "+id);
 
 		driver.findElement(By.xpath("//td[text()='" + id + "']/following-sibling::td/a[contains(text(),'Edit')]"))
 				.click();

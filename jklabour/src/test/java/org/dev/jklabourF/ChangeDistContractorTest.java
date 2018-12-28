@@ -1,10 +1,3 @@
-
-/*
- * @author hudelabs
- * 
- */
-
-
 package org.dev.jklabourF;
 
 import java.io.IOException;
@@ -82,7 +75,7 @@ public class ChangeDistContractorTest extends BaseClass1 {
 		WebElement estdist = driver.findElement(By.name("est_address_district_id"));
 		String dist1 = WebDriverUtils1.dropdownselect(estdist, "Jammu");
 		System.out.println("selected dist ==>" + dist1);
-		FileSet.setExcelData("./excel/data.xlsx", "dist", 1, 1, dist1);
+		FileSet.setExcelData("./shop.xlsx","dist" , 1, 1, dist1);
 		Thread.sleep(1000);
 
 		String estpin = fl.convertDoubleToString(fl.getIntExcelData(i, 13));
@@ -299,9 +292,9 @@ public class ChangeDistContractorTest extends BaseClass1 {
 		
 		
 		WebElement estdist = driver.findElement(By.name("est_address_district_id"));
-		String dist1 = WebDriverUtils1.dropdownselect(estdist, "Jammu");
+		String dist1 = WebDriverUtils1.dropdownselect(estdist, "Kishtwar");
 		System.out.println("selected dist ==>" + dist1);
-		FileSet.setExcelData("./excel/data.xlsx", "dist", 1, 1, dist1);
+		FileSet.setExcelData("./shop.xlsx","dist" , 1, 1, dist1);
 		Thread.sleep(1000);
 
 
@@ -340,9 +333,7 @@ public class ChangeDistContractorTest extends BaseClass1 {
 
 	}
 	
-	
-	
-	
+
 	@Test
 	public void test4ALCRevertBack() throws EncryptedDocumentException, Throwable
 	{
@@ -369,7 +360,7 @@ public class ChangeDistContractorTest extends BaseClass1 {
 
 		driver.findElement(By.xpath(
 				"//input[@value='reverted_back']" + "/following-sibling::textarea[@name='status_update_message']"))
-				.sendKeys("ok");
+				.sendKeys("edit field");
 
 		/*
 		 * driver.findElement(By.
@@ -445,6 +436,9 @@ public class ChangeDistContractorTest extends BaseClass1 {
 		}
 
 	}
+		
+	
+	
 	
 	
 

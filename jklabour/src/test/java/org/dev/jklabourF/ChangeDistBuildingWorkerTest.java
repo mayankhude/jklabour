@@ -1,18 +1,9 @@
-
-/*
- * @author hudelabs
- * 
- */
-
-
 package org.dev.jklabourF;
 
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.dev.jklabour.ObjectRepositoryA.AllocateInspector;
-import org.dev.jklabour.ObjectRepositoryA.EstablishmentsEmployingBuildingWorkersMenu;
-import org.dev.jklabour.ObjectRepositoryA.LICompoundFeeRequest;
+import org.dev.jklabour.ObjectRepositoryA.EstEmpBuildingWorkersMenu;
 import org.dev.jklabour.ObjectRepositoryA.LIRevertBackApplicant;
 import org.dev.jklabour.commonLibS.BaseClass1;
 import org.dev.jklabour.commonLibS.FileSet;
@@ -31,7 +22,7 @@ import org.testng.annotations.Test;
 public class ChangeDistBuildingWorkerTest extends BaseClass1 {
 	static int i = 3;
 
-	@Test
+	@Test(priority=0)
 	public void test1CreateBuildingWorker() throws IOException, Throwable {
 
 		BuildingWorkers worker = PageFactory.initElements(driver, BuildingWorkers.class);
@@ -61,7 +52,7 @@ public class ChangeDistBuildingWorkerTest extends BaseClass1 {
 		WebElement dist = driver.findElement(By.name("establishment_postal_address_district_id"));
 		String dist1 = WebDriverUtils1.dropdownselect(dist, "Jammu");
 		System.out.println("selected dist ==>" + dist1);
-		FileSet.setExcelData("./excel/data.xlsx", "dist", 1, 1, dist1);
+		FileSet.setExcelData("./shop.xlsx","dist" , 1, 1, dist1);
 		Thread.sleep(1000);
 
 		String pin = fl.convertDoubleToString(fl.getIntExcelData(i, 4));
@@ -187,9 +178,9 @@ public class ChangeDistBuildingWorkerTest extends BaseClass1 {
 
 	/* ------------------------------------------------------------------ */
 
-	@Test
+	@Test(priority=1)
 	public void test2ALCRevertBack() throws EncryptedDocumentException, Throwable {
-		EstablishmentsEmployingBuildingWorkersMenu menu = PageFactory.initElements(driver, EstablishmentsEmployingBuildingWorkersMenu.class);
+		EstEmpBuildingWorkersMenu menu = PageFactory.initElements(driver, EstEmpBuildingWorkersMenu.class);
 		menu.BuildingWorkers();
 
 		/*
@@ -212,15 +203,9 @@ public class ChangeDistBuildingWorkerTest extends BaseClass1 {
 
 		driver.findElement(By.xpath(
 				"//input[@value='reverted_back']" + "/following-sibling::textarea[@name='status_update_message']"))
-				.sendKeys("ok");
+				.sendKeys("edit field");
 
-		/*
-		 * driver.findElement(By.
-		 * xpath("//div[contains(text(),'Revert Back Request')]/following-sibling::form/div[2]/div"
-		 * )).click();
-		 * 
-		 * Thread.sleep(2000);
-		 */
+	
 
 		driver.findElement(By
 				.xpath("//div[contains(text(),'Revert Back Request')]/following-sibling::form/div[2]/input[@value='Send']"))
@@ -240,7 +225,7 @@ public class ChangeDistBuildingWorkerTest extends BaseClass1 {
 
 	/* ------------------------------------------------------------------ */
 
-	@Test
+	@Test(priority=2)
 	public void test3UserEditAndSubmit() throws EncryptedDocumentException, Throwable {
 
 		PostApplication pa = PageFactory.initElements(driver, PostApplication.class);
@@ -265,7 +250,7 @@ public class ChangeDistBuildingWorkerTest extends BaseClass1 {
 		WebElement dist = driver.findElement(By.name("establishment_postal_address_district_id"));
 		String dist1 = WebDriverUtils1.dropdownselect(dist, "Kishtwar");
 		System.out.println("selected dist ==>" + dist1);
-		FileSet.setExcelData("./excel/data.xlsx", "dist", 1, 1, dist1);
+		FileSet.setExcelData("./shop.xlsx","dist", 1, 1, dist1);
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//input[@value='Continue']")).submit();
@@ -303,140 +288,113 @@ public class ChangeDistBuildingWorkerTest extends BaseClass1 {
 	
 	
 	
-	@Test
+	@Test(priority=3)
 	
-	public void Test4ALCAllocateInspector() throws EncryptedDocumentException, Throwable
-	{
-		
+	public void test4ALCRevertBack() throws EncryptedDocumentException, Throwable
+	{EstEmpBuildingWorkersMenu menu = PageFactory.initElements(driver, EstEmpBuildingWorkersMenu.class);
+	menu.BuildingWorkers();
 
-		EstablishmentsEmployingBuildingWorkersMenu menu=
-				PageFactory.initElements(driver, EstablishmentsEmployingBuildingWorkersMenu.class);
-		menu.BuildingWorkers();
-
-		/*ALCCustPage ap=PageFactory.initElements(driver, ALCCustPage.class);
-		ap.gettrackingId();
-		ap.doAction();*/
 		
 		/*----------------------- click on View -------------------------------*/
-		
 
-		 FileUtiles fl=new FileUtiles("./excel/jklabourData.xlsx", "trackinid");
-		 String id=fl.getStringExcelData(5, 3);
-		System.out.println("tracking id ==> "+id);
-		 
-		 driver.findElement(By.xpath("//td[text()='"+id+"']/following-sibling::td/a[text()='View']"))
-		.click();
-		
-		
-/*---------------------do action ------------------*/
+		FileUtiles fl = new FileUtiles("./excel/jklabourData.xlsx", "trackinid");
+		String id = fl.getStringExcelData(5, 3);
+		System.out.println("tracking id ==> " + id);
 
-		
-		AllocateInspector ai=PageFactory.initElements(driver, AllocateInspector.class);
-		ai.AllocateInspector();
-		
+		driver.findElement(By.xpath("//td[text()='" + id + "']/following-sibling::td/a[text()='View']")).click();
 
+		/*---------------------do action ------------------*/
 
-		FileUtiles fs= new FileUtiles("./excel/data.xlsx","dist");
-		 String dist1=fs.getStringExcelData(1,1);
-		 System.out.println( dist1);
-		
-		/*-------------------  select LI name------------------------*/
-		Thread.sleep(1000);
-		
-		
-		
-		if(dist1.contains("Jammu"))
-		{String LIname ="Roshan Bandral";
-	     System.out.println("\n "+LIname);
-	       String expLIname="Roshan Bandral ";
-	        if (expLIname.contains(LIname))
-	         {
-	        	driver.findElement(By.xpath("//input[@value='12']")).click(); 
-	        }
-	       
-	        else
-	           {
-	        	driver.findElement(By.xpath("//input[@value='14']")).click();
-	           }
-	    	
-		
-	    driver.findElement(By.xpath("//div[contains(text(),' Allocate Inspector Request')]/following-sibling::form/div[2]/input[@value='Send']")).submit();
-	
-		String msg=driver.findElement(By.xpath("//span[@class='hl-toast hl-toast-pop']")).getText();
+		LIRevertBackApplicant rb = PageFactory.initElements(driver, LIRevertBackApplicant.class);
+		rb.revertBack();
+
+		driver.findElement(By.xpath(
+				"//input[@value='reverted_back']" + "/following-sibling::textarea[@name='status_update_message']"))
+				.sendKeys("Edit Field");
+
+		/*
+		 * driver.findElement(By.
+		 * xpath("//div[contains(text(),'Revert Back Request')]/following-sibling::form/div[2]/div"
+		 * )).click();
+		 * 
+		 * Thread.sleep(2000);
+		 */
+
+		driver.findElement(By
+				.xpath("//div[contains(text(),'Revert Back Request')]/following-sibling::form/div[2]/input[@value='Send']"))
+				.submit();
+
+		String msg = driver.findElement(By.xpath("//span[@class='hl-toast hl-toast-pop']")).getText();
 		System.out.println(msg);
 
-		}
-		
-		else if(dist1.contains("Kishtwar"))
-		
-		{  	driver.findElement(By.xpath("//input[@value='17']")).click(); 
-		     driver.findElement(By.xpath("//div[contains(text(),' Allocate Inspector Request')]/following-sibling::form/div[2]/input[@value='Send']")).submit();
-		
-			String msg=driver.findElement(By.xpath("//span[@class='hl-toast hl-toast-pop']")).getText();
-			System.out.println(msg);		
-		}
-		
-		String p = "LI";
+		/*----------------------set
+		                        person  --------------------*/
+
+		String p = "user";
 
 		FileSet.setExcelData("./excel/data.xlsx", "person", 1, 1, p);
 
 		
+
+	
 	}
 	
 	
 	
 	
 	
-	@Test
+	@Test(priority=4)
 	
-	public void test5LIRevertBack() throws EncryptedDocumentException, Throwable
+	public void test5UserEdit() throws EncryptedDocumentException, Throwable
 	{
 		
+		PostApplication pa = PageFactory.initElements(driver, PostApplication.class);
+		pa.postApp();
 
-		EstablishmentsEmployingBuildingWorkersMenu menu=
-				PageFactory.initElements(driver, EstablishmentsEmployingBuildingWorkersMenu.class);
-					menu.BuildingWorkers();
+		/*
+		 * PostAppsEdit edit=PageFactory.initElements(driver,
+		 * PostAppsEdit.class); edit.edit();
+		 * //td[text()='68443012']/following-sibling::td/a[contains(text(),'Edit
+		 * ')]
+		 */
 
-	/*	ALCCustPage ap=PageFactory.initElements(driver, ALCCustPage.class);
-		ap.gettrackingId();
-		ap.doAction();*/
-		
-		/*----------------------- click on View -------------------------------*/
+		FileUtiles fl = new FileUtiles("./excel/jklabourData.xlsx", "trackinid");
+		String id = fl.getStringExcelData(5, 3);
+		System.out.println(" TRACKING ID =" +id);
+
+		driver.findElement(By.xpath("//td[text()='" + id + "']/following-sibling::td/a[contains(text(),'Edit')]"))
+				.click();
+
+		driver.findElement(By.xpath("//input[@value='Continue']")).submit();
+
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("//input[@value='Continue']")).click();
+
+		/*------------------------------revert back submitted suceesfully--------------------------*/
+
+		try {
+			String actmsg = driver.findElement(By.xpath("//div[@class='message_template template_success']")).getText();
+
+			// Assertr.assertEquals(actmsg, "Payment Transaction Completed
+			// Succcessfully ");
+			if (actmsg.contains("Successfully Updated")) {
+				System.out.println("revert back  ==>" + actmsg);
+			}
+
+			String status = driver.findElement(By.xpath("//tr[1]/td[1]")).getText();
+			System.out.println("current status of the application is ===>  " + status);
+
+			String trckingId = driver.findElement(By.xpath("//tr[2]/td[1]")).getText();
+			System.out.println("Tracking Id ==>" + trckingId);
+
+		} catch (Exception e) {}
 		
 
-		 FileUtiles fl=new FileUtiles("./excel/jklabourData.xlsx", "trackinid");
-		 String id=fl.getStringExcelData(5, 3);
-		System.out.println("tracking id ==> "+id);
-		 
-		 driver.findElement(By.xpath("//td[text()='"+id+"']/following-sibling::td/a[text()='View']"))
-		.click();
-		
-		
-/*---------------------do action ------------------*/
+		String p = "ALC";
 
-		
-		
-		LICompoundFeeRequest fee=PageFactory.initElements(driver, LICompoundFeeRequest.class);
-		fee.compoundFee();
-		
-		
-/*---------------------------compound fees request ------------------------------------*/		
-		
-		driver.findElement(By.xpath("//input[@name='compound_fee_amount']"))
-		.sendKeys("1000");
-				
-		driver.findElement(By.xpath("//input[@name='compound_fee_amount']/../following-sibling::div/textarea")).sendKeys("compound fee");
-		
-		/*driver.findElement(By.xpath("//div[contains(text(),'Send Compound Fee Request')]/following-sibling::form/div[2]/div")).click();
-		 
-		 Thread.sleep(2000);*/
-		
-		driver.findElement(By.xpath("//div[contains(text(),'Send Compound Fee Request')]/following-sibling::form/div[2]/input[@value='Send']")).submit();
-		
-		String msg=driver.findElement(By.xpath("//span[@class='hl-toast hl-toast-pop']")).getText();
-		System.out.println(msg);
-		
-		
+		FileSet.setExcelData("./excel/data.xlsx", "person", 1, 1, p);
+   
 	}
 		
 	}
