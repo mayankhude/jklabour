@@ -27,7 +27,7 @@ public class ATestNGListerner  implements ITestListener{
 		
 		try {
 			System.out.println("test failed and tastCases details are " +result.getName());
-			AScreenShot.capture(result.getName());
+			LIScreenShot.capture(result.getName());
 		} 
 		catch (IOException e) {
 			// TODO Auto-generated catch block

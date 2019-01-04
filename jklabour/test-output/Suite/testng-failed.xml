@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="org.dev.jklabourF.FLengthMigrantTest">
+        <methods>
+          <include name="MigrantRegistrationTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthMigrantTest -->
+      <class name="org.dev.jklabourF.FLengthBoilerRenewTest">
+        <methods>
+          <include name="BoilerRenewTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthBoilerRenewTest -->
+      <class name="org.dev.jklabourF.FactroryRenewFLengthTest">
+        <methods>
+          <include name="facoryLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FactroryRenewFLengthTest -->
+      <class name="org.dev.jklabourF.FLengthFactroryRegTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="facoryLengthTest"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthFactroryRegTest -->
+      <class name="org.dev.jklabourF.Test2FRenew">
+        <methods>
+          <include name="createFactoryRTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.Test2FRenew -->
+      <class name="org.dev.jklabourF.Test1MRenew">
+        <methods>
+          <include name="MigrantRegistrationTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.Test1MRenew -->
+      <class name="org.dev.jklabourF.FLengthBuildingWorkerTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="BWorkerTest"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthBuildingWorkerTest -->
+      <class name="org.dev.jklabourF.FLengthContRenewFLengthTest">
+        <methods>
+          <include name="contractorFLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthContRenewFLengthTest -->
+      <class name="org.dev.jklabourF.FLengthFactroryRenewTest">
+        <methods>
+          <include name="facoryLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthFactroryRenewTest -->
+      <class name="org.dev.jklabourF.FLengthMigrantRenewTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="MigrantRenewTest"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthMigrantRenewTest -->
+      <class name="org.dev.jklabourF.ShopRenewFLengthTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="shopRenewFLengthTest"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.ShopRenewFLengthTest -->
+      <class name="org.dev.jklabourF.MigrantRenewFLengthTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+          <include name="MigrantRenewTest"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.MigrantRenewFLengthTest -->
+      <class name="org.dev.jklabourF.TS1">
+        <methods>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+          <include name="editRevert"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.TS1 -->
+      <class name="org.dev.jklabourF.Test2MRenew">
+        <methods>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+          <include name="MigrantRegistrationTest"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.Test2MRenew -->
+      <class name="org.dev.jklabourF.FLengthFormDTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+          <include name="CreateFormDTest"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthFormDTest -->
+      <class name="org.dev.jklabourF.MigrantWorkerFLengthTest">
+        <methods>
+          <include name="facoryLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.MigrantWorkerFLengthTest -->
+      <class name="org.dev.jklabourF.Test2CRenew">
+        <methods>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="ContractorRenewaltest"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.Test2CRenew -->
+      <class name="org.dev.jklabourF.FLengthBoilerRegTest">
+        <methods>
+          <include name="BoilerRegLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthBoilerRegTest -->
+      <class name="org.dev.jklabourF.Test2SRenew">
+        <methods>
+          <include name="configBC"/>
+          <include name="createShopRegistrationFormTest"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.Test2SRenew -->
+      <class name="org.dev.jklabourF.FLengthShopRenewTest">
+        <methods>
+          <include name="shopRenewFLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthShopRenewTest -->
+      <class name="org.dev.jklabourF.FormDFLengthTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+          <include name="CreateFormDTest"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FormDFLengthTest -->
+      <class name="org.dev.jklabourF.Test2BRenewal">
+        <methods>
+          <include name="boilerRegistrationTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.Test2BRenewal -->
+      <class name="org.dev.jklabourF.FLengthFactoryBuildingTest">
+        <methods>
+          <include name="facoryLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthFactoryBuildingTest -->
+      <class name="org.dev.jklabourF.FLengthShopTest">
+        <methods>
+          <include name="shopRegFLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthShopTest -->
+      <class name="org.dev.jklabourF.MigrantFLengthTest">
+        <methods>
+          <include name="MigrantRegistrationTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.MigrantFLengthTest -->
+      <class name="org.dev.jklabourF.ShopFLengthTest">
+        <methods>
+          <include name="shopRegFLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.ShopFLengthTest -->
+      <class name="org.dev.jklabourF.FactroryRegFLengthTest">
+        <methods>
+          <include name="facoryLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FactroryRegFLengthTest -->
+      <class name="org.dev.jklabourF.FLengthContLabourTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+          <include name="facoryLengthTest"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthContLabourTest -->
+      <class name="org.dev.jklabourF.TS4">
+        <methods>
+          <include name="editRevert"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.TS4 -->
+      <class name="org.dev.jklabourF.FLengthMigrantWorkerTest">
+        <methods>
+          <include name="facoryLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthMigrantWorkerTest -->
+      <class name="org.dev.jklabourF.Test1FRevert">
+        <methods>
+          <include name="editRevert"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.Test1FRevert -->
+      <class name="org.dev.jklabourF.FactoryBuildingFLengthTest">
+        <methods>
+          <include name="facoryLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FactoryBuildingFLengthTest -->
+      <class name="org.dev.jklabourF.FLengthContractorTest">
+        <methods>
+          <include name="contractorFLengthTest"/>
+          <include name="configBC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- org.dev.jklabourF.FLengthContractorTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

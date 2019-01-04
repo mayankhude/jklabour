@@ -18,7 +18,7 @@ public class FileUtiles {
 	public static int row1;
 	  public static Properties getpropertyData() throws Throwable
 	  {
-		 FileInputStream fis=new FileInputStream("./propertyFiles/common.properties");
+		 FileInputStream fis=new FileInputStream("./propertyFile/common.properties");
 		 Properties pobj =new  Properties();
 		 pobj.load(fis);
 		return pobj;

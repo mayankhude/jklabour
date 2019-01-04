@@ -37,16 +37,17 @@ public class BaseClass1 {
 	  
 		@BeforeMethod
 		  public void configBM() throws Throwable
-		  {Properties pObj = FileUtiles.getpropertyData();
-		  String chrome="./resource/chromedriver.exe";
-  		  System.setProperty("webdriver.chrome.driver", chrome);
-  		  driver=new ChromeDriver();
-  	   
+		  {
+		  System.out.println("==================launch the browser==============");
+	    	 String chrome="./resource/chromedriver.exe";
+	    		System.setProperty("webdriver.chrome.driver", chrome);
+	    		driver=new ChromeDriver();
+	    	   
          WebDriverUtils1.implicitlyWait(10);
          WebDriverUtils1.maximizeWindow();
   	System.out.println("===============browser was launched===============");
   
-		  
+  	Properties pObj = FileUtiles.getpropertyData();
 		  driver.get(pObj.getProperty("url"));
 				  Logins lg=PageFactory.initElements(driver, Logins.class);
 			         lg.loginmenu();

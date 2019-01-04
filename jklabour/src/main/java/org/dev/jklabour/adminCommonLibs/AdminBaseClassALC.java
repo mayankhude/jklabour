@@ -3,6 +3,7 @@ package org.dev.jklabour.adminCommonLibs;
 import java.util.Properties;
 import org.dev.jklabour.ObjectRepositoryA.Common;
 import org.dev.jklabour.ObjectRepositoryA.DepartmentLogin;
+import org.dev.jklabour.commonLibS.FileUtiles;
 import org.dev.jklabour.ObjectRepositoryA.AdminLogin;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,7 +24,7 @@ public static WebDriver driver;
 	    @BeforeClass
 	      public void configBC() throws Throwable
 	      {
-	    	Properties pObj = AFileUtiles.getpropertyData();
+	    	Properties pObj = FileUtiles.getpropertyData();
 	    	System.out.println("==================launch the browser==============");
 	    	String bName=pObj.getProperty("browser");
 	    	if(bName.equals("firefox"))
